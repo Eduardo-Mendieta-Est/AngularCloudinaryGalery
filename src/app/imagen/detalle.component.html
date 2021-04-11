@@ -1,0 +1,22 @@
+
+        <div class="modal-header">
+          <h5 class="modal-title">Galeria</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalDismiss()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!-- Instalar: npm install swiper --save-dev para solventar problemas con swiper -->
+        <div class="modal-body">
+            <swiper  [config]="config">
+                <div *ngFor="let imagen of imagenes" class="swiper-slide">
+                  <div class="thumbnail text-center">
+                    <img src="{{imagen.imgUrl}}" class="img-thumbnail img-rounded">
+                  </div>
+                </div>
+            </swiper>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info btn-block" (click)="modalDismiss()"> <i class="far fa-window-close"></i> Cerrar</button>
+        </div>
+ 
